@@ -12,7 +12,7 @@ class Greeter:
         return self.name
 
     def greet(self):
-        return f"Hello, {???}!"
+        return f"Hello, {self.get_name()}!"
 
 
 g = Greeter("Alice")
