@@ -18,14 +18,20 @@
 #     `owner` and `balance` as instance attributes.
 
 class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
     def deposit(self, amount):
-        pass
+        self.balance += amount
 
     def withdraw(self, amount):
-        pass
+        if amount > self.balance:
+            raise ValueError("Insufficient")
+        self.balance -= amount
 
     def __str__(self):
-        return ""
+        return f"BankAccount({self.owner}, balance={self.balance})"
 
 
 account = BankAccount("Alice", 100)
