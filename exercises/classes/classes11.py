@@ -1,5 +1,5 @@
 # Exercise: Classes 11
-# I AM NOT DONE
+
 #
 # Add a class method `from_string` to Temperature that parses a string
 # like "36.6C" and returns a new Temperature instance with the numeric
@@ -17,7 +17,9 @@ class Temperature:
     def __init__(self, degrees):
         self.degrees = degrees
 
-    # Add from_string here
+    @classmethod
+    def from_string(cls, s):
+        return cls(float(s[:-1]))
 
 
 t = Temperature.from_string("36.6C")
