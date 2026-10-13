@@ -4,7 +4,10 @@ assert str(account) == "BankAccount(Alice, balance=120)", f"got {str(account)!r}
 
 fresh = BankAccount("Bob", 50)
 fresh.deposit(25)
-assert fresh.balance == 75
+assert fresh.balance == 75, (
+    f"balance should be 75 after opening with 50 and depositing 25, "
+    f"got {fresh.balance}"
+)
 
 import sys
 try:
